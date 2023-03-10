@@ -6,6 +6,7 @@ import net.minecraft.server.command.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.*;
+import net.minecraft.SharedConstants;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 
@@ -22,8 +23,8 @@ public class Minefetch implements ModInitializer {
 			new LiteralText(String.valueOf("██░░██░░██  "+"Seed: "+world.getSeed())),
 			new LiteralText(String.valueOf("████░░████  "+"Time: "+world.getTime())),
 			new LiteralText(String.valueOf("███░░░░███  "+"Position: "+positions)),
-			new LiteralText(String.valueOf("███░██░███  ")),
-			new LiteralText(String.valueOf("██████████  ")),
+			new LiteralText(String.valueOf("███░██░███  "+"Game version: " + SharedConstants.getGameVersion().getName())),
+			new LiteralText(String.valueOf("██████████  "+"Java version " + System.getProperty("java.version"))),
 		};
 
 		for (Text i: fetches) {sauce.sendFeedback(i, false);}
